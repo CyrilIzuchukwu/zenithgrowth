@@ -36,6 +36,14 @@ class LoginController extends Controller
         } elseif (Auth::user()->role_as == '0') {
             return redirect('user/dashboard')->with('message', 'Welcome to your user dashboard');
         }
+
+//         } elseif (Auth::user()->role_as == '0') {
+//     if (Auth::user()->status == '1') { // Check if user is active
+//         return redirect('user/dashboard')->with('message', 'Welcome to your user dashboard');
+//     } else {
+//         return redirect('/')->with('error', 'Your account is not active. Please contact support.');
+//     }
+// }
     }
 
     /**

@@ -31,6 +31,7 @@
                                     <th scope="col" class="text-center"> Interest Rate</th>
                                 </tr>
                             </thead>
+
                             <tbody>
                                 @foreach ($plans as $index => $plan)
                                 <tr>
