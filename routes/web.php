@@ -100,12 +100,16 @@ Route::prefix('user')->middleware(['auth'])->group(function () {
         Route::get('/deposit-history', 'depositHistory')->name('user.deposit-history');
     });
 
+
     Route::controller(ProfileController::class)->group(function () {
         Route::get('/profile', 'userProfile')->name('user.profile');
+        Route::put('/update-profile', 'updateProfile')->name('profile.update');
+        Route::post('/update-password', 'updatePassword')->name('password.update');
     });
 
 
     Route::controller(InvestmentController::class)->group(function () {
         Route::get('/investments', 'myInvestments')->name('user.investments');
+        Route::post('/investments/{id}/withdraw', 'withdraw')->name('investments.withdraw');
     });
 });

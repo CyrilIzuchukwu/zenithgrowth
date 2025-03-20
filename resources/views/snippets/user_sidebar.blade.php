@@ -17,13 +17,13 @@
                     <span>Dashboard</span>
                 </a>
             </li>
-
             <li>
-                <a href="calendar-main.html">
-                    <iconify-icon icon="solar:calendar-outline" class="menu-icon"></iconify-icon>
-                    <span>Calendar</span>
+                <a href="{{ route('user.investments') }}">
+                    <iconify-icon icon="hugeicons:money-send-square" class="menu-icon"></iconify-icon>
+                    <span>My Investments</span>
                 </a>
             </li>
+
             <li>
                 <a href="kanban.html">
                     <iconify-icon icon="material-symbols:map-outline" class="menu-icon"></iconify-icon>
@@ -60,6 +60,8 @@
                     </li>
                 </ul>
             </li>
+
+
             <li class="dropdown">
                 <a href="javascript:void(0)">
                     <iconify-icon icon="flowbite:users-group-outline" class="menu-icon"></iconify-icon>
@@ -80,10 +82,18 @@
                 </a>
                 <ul class="sidebar-submenu">
                     <li>
-                        <a href="company.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Profile</a>
+                        <a href="{{ route('user.profile') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> Profile</a>
                     </li>
+
+                    <li>
+                        <a href="{{ route('signout') }}"><i class="ri-circle-fill circle-icon text-primary-600 w-auto" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"></i> Logout</a>
+                    </li>
+
+                    <form action="{{ route('signout') }}" method="post" class="d-none" id="logout-form">@csrf</form>
                 </ul>
             </li>
+
+
         </ul>
     </div>
 </aside>
