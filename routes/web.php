@@ -35,6 +35,8 @@ Route::get('about', function () {
 Auth::routes();
 
 
+
+
 Route::get('/auth/signup', [UserController::class, 'signup'])->name('signup');
 
 Route::post('/auth/create', [UserController::class, 'create_user'])->name('user.create');
