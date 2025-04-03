@@ -19,7 +19,9 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
 
     <!-- Title & Favicon -->
-    <title>Finto - Fintech, Banking, & Finance HTML Template</title>
+i commented
+    <!-- <title>Finto - Fintech, Banking, & Finance HTML Template</title> -->
+
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 
@@ -29,10 +31,17 @@
         <div class="loader position-absolute start-0 end-0">
             <div class="wavy position-relative fw-light">
                 <span class="d-inline-block"><img src="assets/images/favicon.png" alt="favicon"></span>
-                <span class="d-inline-block">I</span>
+                <span class="d-inline-block">U</span>
                 <span class="d-inline-block">N</span>
-                <span class="d-inline-block">T</span>
+                <span class="d-inline-block">I</span>
                 <span class="d-inline-block">O</span>
+                <span class="d-inline-block">N</span> 
+                <span class="d-inline-block">T</span>
+                <span class="d-inline-block">R</span>
+                <span class="d-inline-block">A</span>
+                <span class="d-inline-block">D</span>
+                <span class="d-inline-block">E</span>
+                <span class="d-inline-block">S</span>
             </div>
         </div>
     </div>
