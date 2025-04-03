@@ -47,6 +47,8 @@ class UpdateInvestmentProfit extends Command
             // Update the profit column
             $investment->profit += $dailyInterest;
             $investment->save();
+
+
         }
 
         $this->info('Investment profits updated successfully.');

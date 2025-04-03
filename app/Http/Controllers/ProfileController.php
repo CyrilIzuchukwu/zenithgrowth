@@ -15,6 +15,9 @@ class ProfileController extends Controller
     public function userProfile()
     {
         $user = User::with('profile')->find(auth()->id());
+
+        // dd($user);
+
         return view('dashboard.profile', compact('user'));
     }
 

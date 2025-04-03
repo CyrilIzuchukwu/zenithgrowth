@@ -36,6 +36,8 @@ class DepositController extends Controller
             // Get the selected plan
             $plan = Plan::findOrFail($request->plan_id);
 
+            // dd($plan);
+
             // Check if the amount is within the plan's range
             if ($request->amount < $plan->minimum_amount || $request->amount > $plan->maximum_amount) {
                 return back()->with('error', "Deposit amount must be between {$plan->minimum_amount} and {$plan->maximum_amount}.");
@@ -76,6 +78,7 @@ class DepositController extends Controller
                 'proof' => 'required|image|mimes:jpeg,png,jpg|max:2048', // Allow only image formats
             ]);
 
+
             // Retrieve deposit details from session
             $depositDetails = Session::get('deposit_details');
             // Handle file upload manually
@@ -111,6 +114,8 @@ class DepositController extends Controller
     public function depositHistory()
     {
         $deposits = Deposit::where('user_id', Auth::id())->orderBy('created_at', 'desc')->get();
+
+        
         return view('dashboard.deposit.deposit-history', compact('deposits'));
     }
 }

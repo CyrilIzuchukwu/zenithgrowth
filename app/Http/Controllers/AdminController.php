@@ -47,14 +47,21 @@ class AdminController extends Controller
 
         $deposit = Deposit::findOrFail($id);
 
+        // dd($deposit);
+
         // Fetch plan details
         $plan = Plan::find($deposit->plan_id);
         if (!$plan) {
             return back()->with('error', 'Investment plan not found');
         }
 
+        // dd($plan);
+
 
         $roi = $plan->interest_rate;
+
+        // BEDMAS
+        // dd($roi);
         $totalProfit = ($deposit->amount_deposited * $roi / 100) * $plan->duration;
 
         Investment::create([
