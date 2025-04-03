@@ -23,9 +23,12 @@
                 <!-- <img src="assets/images/user-grid/user-grid-bg1.png" alt="" class="w-full object-fit-cover"> -->
                 <div class="pb-6 ms-6 mb-6 me-6 mt-[20px]">
                     <div class="text-center border-b border-neutral-200 dark:border-neutral-600">
-                        <img src="{{ auth()->user()->profile->profile_pic ? asset('uploads/' . auth()->user()->profile->profile_pic) : asset('admin_assets/images/user-grid/user-grid-img14.png') }}"
+                        <img src="{{ auth()->user()->profile && auth()->user()->profile->profile_pic
+    ? asset('uploads/' . auth()->user()->profile->profile_pic)
+    : asset('admin_assets/images/user-grid/user-grid-img14.png') }}"
                             alt="User Profile Picture"
-                            class="border br-white border-width-2-px w-200-px  rounded-full object-fit-cover mx-auto" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; ">
+                            class="border br-white border-width-2-px w-200-px rounded-full object-fit-cover mx-auto"
+                            style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover;">
 
                         <h6 class="mb-0 mt-4">{{ $user->name }}</h6>
                         <span class="text-secondary-light mb-4">{{ $user->email }}</span>
